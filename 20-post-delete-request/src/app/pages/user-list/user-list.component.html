@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<p>Users:</p>
+
+<ul class="user-list">
+  @for (user of userService.users; track $index) {
+  <li class="user-item">
+    <div>
+      <a [routerLink]="user.id.toString()" class="user-link">
+        <h2 class="user-name">{{ user.name }}</h2>
+      </a>
+      <h3 class="user-email">{{ user.email }}</h3>
+      <p class="trash-icon" (click)="deleteUser(user.id)">🗑</p>
+    </div>
+  </li>
+  }
+</ul>

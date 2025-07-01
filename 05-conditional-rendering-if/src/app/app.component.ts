@@ -6,11 +6,11 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FormsModule],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  condition: boolean = true;
-  condition2: string = "asdf";
+  condition: boolean = false;
+  condition2: string = "";
 }

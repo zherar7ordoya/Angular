@@ -8,13 +8,11 @@ import { Component, input, Input } from '@angular/core';
   styleUrl: './child.component.css',
 })
 export class ChildComponent {
-  // @Input()
-  // msg: string = '';
+  @Input()
+  msg: string = '';
+  //msg = input<string>('');
 
-  msg = input<string>('');
-
-  // @Input()
-  // person: any;
-
-  person = input<any>();
+  @Input()
+  person: any;
+  //person = input<any>();
 }

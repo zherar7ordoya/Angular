@@ -11,7 +11,7 @@ import { ChildComponent } from './components/child/child.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  text: string = "Variable desde el padre";
+  msg: string = "Luke, I am your father!";
 
   person: any = {
     sex: "hombre",

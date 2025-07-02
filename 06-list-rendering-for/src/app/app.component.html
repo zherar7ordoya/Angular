@@ -1,5 +1,28 @@
-<h1>Bloque &#64; for - Renderizado de listas</h1>
+<h1>Bloque &#64;for</h1>
+<h2> Renderizado de listas</h2>
 
-@for (movie of movies; track movie) {
+<hr />
+
+<!-- Create numbered list from movies array using $index-->
+<ul>
+  <li *ngFor="let movie of movies; let i = index">
+    {{ i + 1 }} - {{ movie }}
+  </li>
+</ul>
+
+
+@for (movie of movies; track $index) {
   <p>{{ $index + 1 }} - {{ movie }}</p>
 }
+
+<ul>
+@for (movie of movies; track movie) {
+  <li>{{ movie }}</li>
+}
+</ul>
+
+<ol>
+@for (movie of movies; track movie) {
+  <li>{{ movie }}</li>
+}
+</ol>

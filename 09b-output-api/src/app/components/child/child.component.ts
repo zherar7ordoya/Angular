@@ -1,4 +1,4 @@
-import { Component, output} from '@angular/core';
+import { Component, EventEmitter, Output, output} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -8,12 +8,14 @@ import { Component, output} from '@angular/core';
   styleUrl: './child.component.css',
 })
 export class ChildComponent {
-//   @Output()
-//   login: EventEmitter<any> = new EventEmitter<any>;
 
-  login = output<any>();
+  // Vamos a crear un evento, el cual se hace con un decorador @Output.
+   @Output()
+   login: EventEmitter<any> = new EventEmitter<any>();
 
-  userName: string = 'Adrián!';
+  //login = output<any>();
+
+  userName: string = "GERARDO TORDOYA";
 
   handleLogin() {
     this.login.emit(this.userName);

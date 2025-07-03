@@ -3,16 +3,16 @@ import { RouterOutlet } from '@angular/router';
 import { ChildComponent } from './components/child/child.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, ChildComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+    selector: 'app-root',
+    standalone: true,
+    imports: [ChildComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
 })
 export class AppComponent {
-  name: string = "";
+    name: string = "";
 
-  setName(e: any) {
-    this.name = e;
-  }
+    setName(e: any) {
+        this.name = e;
+    }
 }

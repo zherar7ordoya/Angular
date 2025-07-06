@@ -1,22 +1,28 @@
-<h1>Reactive Forms</h1>
+<main class="container">
 
-<form [formGroup]="movieForm" (submit)="handleSubmit()">
+    <h1>Reactive Forms</h1>
 
-  <fieldset class="grid">
-  <label for="movie-name">Movie Name:</label>
-  <input type="text" id="movie-name" formControlName="name">
-  </fieldset>
+    <form [formGroup]="movieForm" (submit)="handleSubmit()">
 
-  <fieldset class="grid">
-  <label for="movie-duration">Movie Duration:</label>
-  <input type="number" id="movie-duration" formControlName="duration">
-  </fieldset>
+        <fieldset class="grid">
+            <label for="movie-name">Movie Name:</label>
+            <input type="text" id="movie-name" formControlName="name">
+        </fieldset>
 
-  <fieldset class="grid">
-  <label for="movie-director">Movie Director:</label>
-  <input type="text" id="movie-director" formControlName="director">
-  </fieldset>
+        <fieldset class="grid">
+            <label for="movie-duration">Movie Duration:</label>
+            <input type="number" id="movie-duration" formControlName="duration">
+        </fieldset>
 
-  <button type="submit" style="width: 50%;">Create Movie</button>
+        <fieldset class="grid">
+            <label for="movie-director">Movie Director:</label>
+            <input type="text" id="movie-director" formControlName="director">
+        </fieldset>
 
-</form>
+        <div style="display: flex; justify-content: center; margin-top: 1rem;">
+            <button type="submit" style="width: 25%;">Create Movie</button>
+        </div>
+
+    </form>
+
+</main>

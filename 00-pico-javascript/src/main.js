@@ -1,4 +1,6 @@
 import '@picocss/pico/css/pico.min.css';
+import './styles/background.css';
+import './styles/layout.css';
 
 async function loadComponent(selector, path, callback) {
     const res = await fetch(path);
@@ -16,6 +18,9 @@ loadComponent('#header', '/src/components/header.html', () => {
             const theme = el.getAttribute('data-theme-switcher');
             document.documentElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
+
+            // Cerrar el dropdown (el <details>)
+            el.closest('details')?.removeAttribute('open');
         });
     });
 
@@ -25,10 +30,6 @@ loadComponent('#header', '/src/components/header.html', () => {
         document.documentElement.setAttribute('data-theme', savedTheme);
     }
 });
-
-
-
-
 
 // Main content components
 loadComponent('#preview', '/src/components/preview.html');

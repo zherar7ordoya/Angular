@@ -1,4 +1,10 @@
 .form-error {
-  font-size: 0.8em;
-  color: red;
+    font-size: 0.8em;
+    color: red;
+}
+
+button {
+    color: black;
+    border-color: black;
+    background-color: wheat;
 }

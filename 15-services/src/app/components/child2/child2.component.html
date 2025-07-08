@@ -1,8 +1,12 @@
 <div class="child">
-  <h2>Este es otro componente hijo</h2>
+    <h2>Este es otro componente hijo</h2>
 
-  <h3>{{ productService.product.name }}</h3>
-  <button (click)="productService.setProductName('Television')">
-    Change Name
-  </button>
+    <h3>{{ productService.product.name }}</h3>
+    <h4>{{ productService.product.price }}</h4>
+    <h4>{{ productService.product.isForSale ? 'En venta' : 'No en venta' }}</h4>
+
+    <button (click)="productService.setProductName('Television')">
+        Change Name
+    </button>
+
 </div>

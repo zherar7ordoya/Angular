@@ -1,5 +1,5 @@
-export default interface product {
-  name: string,
-  price: number,
-  isForSale: boolean
+export default interface Product {
+    name: string,
+    price: number,
+    isForSale: boolean
 }

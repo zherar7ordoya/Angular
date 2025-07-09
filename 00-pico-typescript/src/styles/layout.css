@@ -1,0 +1,40 @@
+:root {
+    --light: #fdf6e3;
+    --dark: #2e2a24;
+}
+
+header.container,
+footer.container {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+}
+
+[data-theme='light'] body {
+    background-color: var(--light);
+}
+
+[data-theme='dark'] body {
+    background-color: var(--dark);
+}
+
+[data-theme='light'] header.container {
+    border-bottom: var(--dark) solid 1px;
+}
+
+[data-theme='dark'] header.container {
+    border-bottom: var(--light) solid 1px;
+}
+
+[data-theme='light'] footer.container {
+    border-top: var(--dark) solid 1px;
+}
+
+[data-theme='dark'] footer.container {
+    border-top: var(--light) solid 1px;
+}
+

@@ -5,19 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <title>Preview • Pico CSS</title>
+    <title>Local Preview • Pico CSS</title>
     <meta name="description" content="A pure HTML example, without dependencies.">
-
-    <!-- Pico.css 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css"
-    >
-    -->
-
 </head>
 
 <body>
+    
     <div id="header"></div>
 
     <!-- Main -->
@@ -37,16 +30,11 @@
     <!-- ./ Main -->
 
     <div id="footer"></div>
-    <div id="example"></div>
     
-    <!-- Minimal theme switcher -->
-    <script src="./src/scripts/minimal-theme-switcher.js"></script>
-
-    <!-- Modal -->
-    <script src="./src/scripts/modal.js"></script>
-
-    <!-- Main JS -->
-     <script type="module" src="/src/main.js"></script>
+    <!-- ./ Example  --> <div id="example"></div>
+    <!-- ./ Switcher --> <script type="module" src="./src/scripts/themeSwitcher.js"></script>
+    <!-- ./ Modal    --> <script src="./src/scripts/modalHandler.js"></script>
+    <!-- ./ Main     --> <script type="module" src="/src/main.js"></script>
 
 </body>
 

@@ -1,14 +1,28 @@
 <app-header></app-header>
 
-<p>Movies:</p>
+<h2>Movies:</h2>
 
-<ul class="movie-list">
-  @for (movie of movieService.movies; track $index) {
-  <li class="movie-item">
-    <h2>{{ $index + 1 }}</h2>
-    <h2>{{ movie.name }}</h2>
-    <h3>{{ movie.duration }} mins</h3>
-    <h3>{{ movie.director }}</h3>
-  </li>
-  }
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Duración</th>
+            <th>Director</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--
+        "track" function:
+        it helps Angular identify which items have changed, are added, or are removed
+        -->
+        @for (movie of movieService.movies; track $index) {
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ movie.name }}</td>
+            <td>{{ movie.duration }} mins</td>
+            <td>{{ movie.director }}</td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -9,6 +9,7 @@ import { MovieService } from '../../services/movie.service';
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.css',
 })
+
 export class MovieListComponent {
   constructor(public movieService: MovieService) {}
 }

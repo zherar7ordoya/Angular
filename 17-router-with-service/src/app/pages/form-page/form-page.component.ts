@@ -9,6 +9,7 @@ import { MovieFormComponent } from '../../components/movie-form/movie-form.compo
   templateUrl: './form-page.component.html',
   styleUrl: './form-page.component.css'
 })
+
 export class FormPageComponent {
 
 }

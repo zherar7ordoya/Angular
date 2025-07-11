@@ -1,7 +1,10 @@
 <app-header></app-header>
 
 @if (selectedUser) {
-  <h2>{{ selectedUser.name }}</h2>
-} @else {
-  <h3>No hay ningún usuario con ese id</h3>
+<p>Id: {{ selectedUser.id }}</p>
+<h2>User: {{ selectedUser.name }}</h2>
+<p>Email: {{ selectedUser.email }}</p>
+}
+@else {
+<h3>No hay ningún usuario con ese id</h3>
 }

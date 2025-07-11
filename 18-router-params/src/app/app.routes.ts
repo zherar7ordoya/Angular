@@ -1,5 +1,6 @@
-import { Routes } from '@angular/router';
+// File path: /src/app/app.routes.ts
 
+import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';

@@ -1,3 +1,5 @@
+// File path: /src/app/services/movie.service.ts
+
 import { Injectable } from '@angular/core';
 import Movie from '../models/Movie';
 

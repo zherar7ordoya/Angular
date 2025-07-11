@@ -1,3 +1,5 @@
+// File path: /src/app/pages/movie-list/movie-list.component.ts
+
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { MovieService } from '../../services/movie.service';

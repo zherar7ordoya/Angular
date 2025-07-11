@@ -1,16 +1,18 @@
+<!-- File path: /src/app/pages/movie-list/movie-list.component.html -->
+
 <app-header></app-header>
 
 <p>Movies:</p>
 
-<ul class="movie-list">
+<ul>
     @for (movie of movieService.movies; track $index) {
     <li>
-        <a [routerLink]="movie.name" class="link">
-            <div class="movie-container">
-                <h2>{{ $index + 1 }}</h2>
-                <h2>{{ movie.name }}</h2>
-                <h3>{{ movie.duration }} mins</h3>
-                <h3>{{ movie.director }}</h3>
+        <a [routerLink]="['/movies', movie.name]">
+            <div>
+                <p>{{ $index + 1 }}</p>
+                <span>{{ movie.name }}</span>
+                <span>{{ movie.duration }} mins</span>
+                <p>{{ movie.director }}</p>
             </div>
         </a>
     </li>

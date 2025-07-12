@@ -7,8 +7,9 @@ import User from '../models/User';
 })
 export class UserService {
   // readonly API_URL = "https://jsonplaceholder.typicode.com/users";
-  readonly API_URL =
-    'https://ca8d440d5f971164a0b0.free.beeceptor.com/api/users';
+  readonly API_URL = 'http://localhost:3000/users';
+  //'https://angular.free.beeceptor.com/api/users';
+    //'https://ca8d440d5f971164a0b0.free.beeceptor.com/api/users';
 
   users: User[];
 

@@ -38,10 +38,10 @@ export class UserFormComponent {
     console.log(this.userForm.value);
 
     this.userService.postUser(this.userForm.value).subscribe({
-      next: (data) => {
+      next: data => {
         console.log(data);
       },
-      error: (e) => {
+      error: e => {
         console.log(e);
       },
     });

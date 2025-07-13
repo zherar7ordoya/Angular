@@ -19,11 +19,11 @@ export class UserListComponent implements OnInit {
 
   getUsers() {
     this.userService.getUsers().subscribe({
-      next: (data) => {
+      next: data => {
         console.log(data);
         this.userService.users = data;
       },
-      error: (e) => {
+      error: e => {
         console.log(e);
       },
     });

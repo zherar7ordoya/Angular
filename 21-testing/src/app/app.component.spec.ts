@@ -26,7 +26,7 @@ describe('AppComponent', () => {
         const app = fixture.componentInstance;
         app.movieForm.controls['name'].setValue('');
         app.movieForm.controls['duration'].setValue('');
-        expect(app.movieForm.valid).toBeFalsy();
+        expect(app.movieForm.valid).toBeFalse();
     });
 
     it('Form should be valid', () => {
@@ -34,7 +34,7 @@ describe('AppComponent', () => {
         const app = fixture.componentInstance;
         app.movieForm.controls['name'].setValue('Star Wars');
         app.movieForm.controls['duration'].setValue('200');
-        expect(app.movieForm.valid).toBeTruthy();
+        expect(app.movieForm.valid).toBeTrue();
     });
 
     it('Button should send the form when clicked', () => {
@@ -44,8 +44,8 @@ describe('AppComponent', () => {
         sendBtn.click();
         expect(app.sentMsg).toBe('Enviado');
 
-        // fixture.detectChanges();
-        // const sentMsg = fixture.nativeElement.querySelector("#sent-msg");
-        // expect(sentMsg.textContent).toBe("Enviado");
+         fixture.detectChanges();
+         const sentMsg = fixture.nativeElement.querySelector("#sent-msg");
+         expect(sentMsg.textContent).toBe("Enviado");
     });
 });

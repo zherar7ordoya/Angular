@@ -5,6 +5,7 @@ import User from '../models/User';
 @Injectable({
   providedIn: 'root',
 })
+
 export class UserService {
   // readonly API_URL = "https://jsonplaceholder.typicode.com/users";
   readonly API_URL = 'http://localhost:3000/users';

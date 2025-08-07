@@ -40,4 +40,14 @@ export class NoteService {
     createId = (): string => {
         return Date.now().toString(36) + Math.random().toString(36).slice(2);
     }
+
+    updateTitle(id: string, newTitle: string): void {
+        const note = this.notes.find(note => note.id === id);
+        if (note) note.title = newTitle;
+    }
+
+    updateMarked(id: string): void {
+        const note = this.notes.find(note => note.id === id);
+        if (note) note.marked = !note.marked;
+    }
 }

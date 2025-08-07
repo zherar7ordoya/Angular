@@ -1,4 +1,11 @@
-<article id="note-card">
-    <input type="text" class="card-title" [value]="note()?.title" />
-    <input type="checkbox" class="card-marked" [checked]="note()?.marked" />
+<article class="note-card">
+    <input type="text"
+           class="card-title"
+           [value]="note()?.title"
+           (input)="updateTitle(note()?.id, $event)"
+    />
+    <input type="checkbox"
+           [checked]="note()?.marked"
+           (input)="updateMarked(note()?.id)"
+    />
 </article>

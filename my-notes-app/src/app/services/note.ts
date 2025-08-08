@@ -53,4 +53,8 @@ export class NoteService {
         if (!updatedNote) return;
         updatedNote.marked = !updatedNote.marked;
     }
+
+    createNote(note: Note) {
+        this.notes.unshift(note);
+    }
 }

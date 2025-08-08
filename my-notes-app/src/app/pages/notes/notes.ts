@@ -8,7 +8,7 @@ import { NoteCard } from '../../components/note-card/note-card';
     imports: [Header, NoteCard],
     templateUrl: './notes.html',
     styleUrl: './notes.css',
-    providers: [NoteService]
+    //providers: [NoteService]
 })
 export class Notes {
     constructor(public noteService: NoteService) { }

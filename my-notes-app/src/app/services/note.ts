@@ -1,41 +1,21 @@
 import { Injectable } from '@angular/core';
 import Note from '../../models/Note';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
 })
 export class NoteService {
 
+    readonly API_URL = 'http://localhost:3000/notes'; 
     notes: Note[];
 
-    constructor() {
-        this.notes = [
-            {
-                id: this.createId(),
-                title: 'First Note',
-                marked: false
-            },
-            {
-                id: this.createId(),
-                title: 'Second Note',
-                marked: true
-            },
-            {
-                id: this.createId(),
-                title: 'Third Note',
-                marked: false
-            },
-            {
-                id: this.createId(),
-                title: 'Fourth Note',
-                marked: true
-            },
-            {
-                id: this.createId(),
-                title: 'Fifth Note',
-                marked: false
-            }
-        ];
+    constructor(private http: HttpClient) {
+        this.notes = [];
+    }
+
+    getNotes() {
+        return this.http.get<Note[]>(this.API_URL);
     }
 
     createId = () => {

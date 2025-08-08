@@ -1,0 +1,6 @@
+{
+  "notes": [
+    { "id": "1", "title": "Primera nota", "marked": false },
+    { "id": "2", "title": "Segunda nota", "marked": true }
+  ]
+}

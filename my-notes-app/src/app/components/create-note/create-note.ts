@@ -10,6 +10,7 @@ import Note from '../../../models/Note';
     styleUrl: './create-note.css'
 })
 export class CreateNote {
+    
     noteTitle: string = '';
 
     constructor(public noteService: NoteService) { }
@@ -24,5 +25,6 @@ export class CreateNote {
             marked: false
         };
         this.noteService.createNote(newNote);
+        this.noteTitle = '';
     }
 }

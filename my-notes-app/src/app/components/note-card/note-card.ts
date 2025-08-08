@@ -9,16 +9,21 @@ import { NoteService } from '../../services/note';
     styleUrl: './note-card.css'
 })
 export class NoteCard {
-    
+
     note = input<Note>();
 
     constructor(public noteService: NoteService) { }
 
-    updateTitle(id: any, e: any): void {
-        this.noteService.updateTitle(id, e.target.value);
+    updateTitle(id: string | undefined, e: Event) {
+        console.log('updateTitle', id);
+        if (!id) return;
+        const inputHtml = e.target as HTMLInputElement;
+        this.noteService.updateTitle(id, inputHtml.value)
     }
 
-    updateMarked(id: any): void {
+    updateMarked(id: string | undefined) {
+        console.log('updateMarked', id);
+        if (!id) return;
         this.noteService.updateMarked(id);
     }
 

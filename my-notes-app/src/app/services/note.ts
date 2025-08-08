@@ -5,7 +5,8 @@ import Note from '../../models/Note';
     providedIn: 'root'
 })
 export class NoteService {
-    notes: Note[] = [];
+
+    notes: Note[];
 
     constructor() {
         this.notes = [
@@ -37,17 +38,19 @@ export class NoteService {
         ];
     }
 
-    createId = (): string => {
+    createId = () => {
         return Date.now().toString(36) + Math.random().toString(36).slice(2);
+    };
+
+    updateTitle(id: string, newTitle: string) {
+        const updatedNote = this.notes.find((note) => note.id === id);
+        if (!updatedNote) return;
+        updatedNote.title = newTitle;
     }
 
-    updateTitle(id: string, newTitle: string): void {
-        const note = this.notes.find(note => note.id === id);
-        if (note) note.title = newTitle;
-    }
-
-    updateMarked(id: string): void {
-        const note = this.notes.find(note => note.id === id);
-        if (note) note.marked = !note.marked;
+    updateMarked(id: string) {
+        const updatedNote = this.notes.find((note) => note.id === id);
+        if (!updatedNote) return;
+        updatedNote.marked = !updatedNote.marked;
     }
 }

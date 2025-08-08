@@ -2,10 +2,8 @@
     <input type="text"
            class="card-title"
            [value]="note()?.title"
-           (input)="updateTitle(note()?.id, $event)"
-    />
+           (input)="updateTitle(note()?.id, $event)" />
     <input type="checkbox"
            [checked]="note()?.marked"
-           (input)="updateMarked(note()?.id)"
-    />
+           (input)="updateMarked(note()?.id)" />
 </article>

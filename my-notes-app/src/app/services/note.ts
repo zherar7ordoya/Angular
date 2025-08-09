@@ -23,15 +23,15 @@ export class NoteService {
     };
 
     updateTitle(id: string, newTitle: string) {
-        const updatedNote = this.notes.find((note) => note.id === id);
-        if (!updatedNote) return;
-        updatedNote.title = newTitle;
+        const note = this.notes.find((note) => note.id === id);
+        if (!note) return;
+        note.title = newTitle;
     }
 
     updateMarked(id: string) {
-        const updatedNote = this.notes.find((note) => note.id === id);
-        if (!updatedNote) return;
-        updatedNote.marked = !updatedNote.marked;
+        const note = this.notes.find((note) => note.id === id);
+        if (!note) return;
+        note.marked = !note.marked;
     }
 
     createNote(note: Note) {

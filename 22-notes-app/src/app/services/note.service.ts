@@ -6,7 +6,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NoteService {
-  readonly API_URL = "https://caf653cbb0b384bd9c36.free.beeceptor.com/api/notes/";
+  //readonly API_URL = "https://caf653cbb0b384bd9c36.free.beeceptor.com/api/notes/";
+  /*
+    Download and run a mock REST API server for testing:
+        npm install -g json-server
+        json-server --watch db.json --port 3000
+    This will start a mock REST API server at http://localhost:3000/notes
+    */
+    readonly API_URL = 'http://localhost:3000/notes';
 
   notes: Note[];
 

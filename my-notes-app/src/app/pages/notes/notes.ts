@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Inject } from '@angular/core';
 import { Header } from '../../components/header/header';
 import { NoteService } from '../../services/note';
 import { NoteCard } from '../../components/note-card/note-card';
@@ -16,7 +16,7 @@ export class Notes implements OnInit {
 
     constructor(
         public noteService: NoteService,
-        private cd: ChangeDetectorRef
+        @Inject(ChangeDetectorRef) private changeDetector: ChangeDetectorRef
     ) { }
 
     ngOnInit(): void {
@@ -26,13 +26,13 @@ export class Notes implements OnInit {
     getNotes() {
         if (this.noteService.notes.length > 0) {
             // Ya tenemos notas cargadas, forzamos refresco de vista por si hace falta
-            this.cd.detectChanges();
+            this.changeDetector.detectChanges();
             return;
         }
         return this.noteService.getNotes().subscribe({
             next: data => {
                 this.noteService.notes = data;
-                this.cd.detectChanges();
+                this.changeDetector.detectChanges();
             },
             error: e => console.error('Error fetching notes:', e)
         });

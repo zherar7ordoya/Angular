@@ -7,6 +7,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NoteService {
 
+    /*
+    Download and run a mock REST API server for testing:
+        npm install -g json-server
+        json-server --watch db.json --port 3000
+    This will start a mock REST API server at http://localhost:3000/notes
+    */
     readonly API_URL = 'http://localhost:3000/notes'; 
     notes: Note[];
 
@@ -35,6 +41,7 @@ export class NoteService {
     }
 
     createNote(note: Note) {
-        this.notes.unshift(note);
+        //this.notes.unshift(note);
+        return this.http.post<Note>(this.API_URL, note);
     }
 }

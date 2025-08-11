@@ -1,6 +1,39 @@
 {
   "notes": [
-    { "id": "1", "title": "Primera nota", "marked": false },
-    { "id": "2", "title": "Segunda nota", "marked": true }
+    {
+      "id": "1",
+      "title": "Ir al cine",
+      "marked": false
+    },
+    {
+      "id": "2",
+      "title": "Comer en un restaurante",
+      "marked": false
+    },
+    {
+      "id": "3",
+      "title": "Médico",
+      "marked": false
+    },
+    {
+      "id": "4",
+      "title": "Comprar pan",
+      "marked": false
+    },
+    {
+      "id": "5",
+      "title": "Llamar a mi amigo",
+      "marked": false
+    },
+    {
+      "id": "me78z3otbdzxzoxdobn",
+      "title": "Hola!",
+      "marked": false
+    },
+    {
+      "id": "me78zy3prwvad4od7j",
+      "title": "Una nueva tarea.",
+      "marked": false
+    }
   ]
 }

@@ -1,22 +1,25 @@
 <app-header></app-header>
 
 <section id="notes-page">
-  <h2>Notes</h2>
+    
+    <h2>Notes</h2>
 
-  @if (hasError) {
+    @if (hasError) {
     <h2>No se han podido cargar las Notas</h2>
-  } @else if (isLoading) {
+    }
+    @else if (isLoading) {
     <h2>Cargando...</h2>
-  } @else {
+    }
+    @else {
     <ul class="note-list">
-      <li>
-        <app-create-note></app-create-note>
-      </li>
-      @for (note of noteService.notes; track note.id) {
         <li>
-          <app-note-card [note]="note"></app-note-card>
+            <app-create-note></app-create-note>
         </li>
-      }
+        @for (note of noteService.notes; track note.id) {
+        <li>
+            <app-note-card [note]="note"></app-note-card>
+        </li>
+        }
     </ul>
-  }
+    }
 </section>

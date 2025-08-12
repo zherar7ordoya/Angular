@@ -5,33 +5,34 @@ import { NoteCardComponent } from '../../components/note-card/note-card.componen
 import { CreateNoteComponent } from '../../components/create-note/create-note.component';
 
 @Component({
-  selector: 'app-notes',
-  standalone: true,
-  imports: [HeaderComponent, NoteCardComponent, CreateNoteComponent],
-  templateUrl: './notes.component.html',
-  styleUrl: './notes.component.css'
+    selector: 'app-notes',
+    standalone: true,
+    imports: [HeaderComponent, NoteCardComponent, CreateNoteComponent],
+    templateUrl: './notes.component.html',
+    styleUrl: './notes.component.css'
 })
 export class NotesComponent implements OnInit {
-  hasError: boolean = false;
-  isLoading: boolean = true;
 
-  constructor(public noteService: NoteService) {}
+    hasError: boolean = false;
+    isLoading: boolean = true;
 
-  ngOnInit(): void {
-    this.getNotes();
-  }
+    constructor(public noteService: NoteService) { }
 
-  getNotes() {
-    this.noteService.getNotes().subscribe({
-      next: (data) => {
-        this.noteService.notes = data.reverse();  
-        this.isLoading = false;  
-        this.hasError = false;   
-      },
-      error: (e) => {
-        console.log(e);
-        this.hasError = true;   
-      }
-    })
-  }
+    ngOnInit(): void {
+        this.getNotes();
+    }
+
+    getNotes() {
+        this.noteService.getNotes().subscribe({
+            next: (data) => {
+                this.noteService.notes = data.reverse();
+                this.isLoading = false;
+                this.hasError = false;
+            },
+            error: (e) => {
+                console.log(e);
+                this.hasError = true;
+            }
+        })
+    }
 }

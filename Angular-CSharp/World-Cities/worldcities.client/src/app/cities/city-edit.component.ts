@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { HttpClient, HttpParams } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, AbstractControl, AsyncValidatorFn } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 // import { environment } from './../../environments/environment';
@@ -33,6 +33,11 @@ export class CityEditComponent
   // the countries array for the select
   countries?: Country[];
 
+    // Activity Log (for debugging purposes) 
+    activityLog: string = '';
+
+    private subscriptions: Subscription = new Subscription();
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -54,8 +59,43 @@ export class CityEditComponent
       countryId: new FormControl('', Validators.required)
     }, null, this.isDupeCity());
 
+      // react to form changes 
+      this.subscriptions.add(this.form.valueChanges
+          .subscribe(() =>
+          {
+              if (!this.form.dirty)
+              {
+                  this.log("Form Model has been loaded.");
+              }
+              else
+              {
+                  this.log("Form was updated by the user.");
+              }
+          }));
+
+      // react to changes in the form.name control
+      this.subscriptions.add(this.form.get("name")!.valueChanges
+          .subscribe(() =>
+          {
+              if (!this.form.dirty)
+              {
+                  this.log("Name has been loaded with initial values.");
+              }
+              else
+              {
+                  this.log("Name was updated by the user.");
+              }
+          }));
+
     this.loadData();
   }
+
+    log(str: string)
+    {
+        this.activityLog += "["
+            + new Date().toLocaleString()
+            + "] " + str + "<br />";
+    }
 
   loadData() {
 
@@ -142,6 +182,11 @@ export class CityEditComponent
       }
     }
   }
+
+    ngOnDestroy()
+    {
+        this.subscriptions.unsubscribe();
+    }
 
   isDupeCity(): AsyncValidatorFn {
     return (control: AbstractControl): Observable<{ [key: string]: any } | null> => {

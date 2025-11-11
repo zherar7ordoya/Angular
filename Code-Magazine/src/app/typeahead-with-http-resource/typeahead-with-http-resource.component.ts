@@ -4,9 +4,9 @@ import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { debounceTime } from 'rxjs';
 
 @Component({
-  selector: 'app-typeahead-with-http-resource',
-  imports: [],
-  template: `
+    selector: 'app-typeahead-with-http-resource',
+    imports: [],
+    template: `
     <h2>Typeahead with HTTP Resource</h2>
     <p>
       This component demonstrates a typeahead search feature that fetches
@@ -36,34 +36,34 @@ import { debounceTime } from 'rxjs';
   `,
 })
 export class TypeaheadWithHttpResourceComponent {
-  query = signal('');
-  debouncedQuery = toSignal(toObservable(this.query).pipe(debounceTime(300)), {
-    initialValue: '',
-  });
+    query = signal('');
+    debouncedQuery = toSignal(toObservable(this.query).pipe(debounceTime(300)), {
+        initialValue: '',
+    });
 
-  #searchResource = httpResource<{ products: { id: number; title: string }[] }>(
-    () => {
-      if (!this.debouncedQuery()) {
-        return undefined; // Skip the request if the query is empty
-      }
+    #searchResource = httpResource<{ products: { id: number; title: string }[] }>(
+        () => {
+            if (!this.debouncedQuery()) {
+                return undefined; // Skip the request if the query is empty
+            }
 
-      const query = encodeURIComponent(this.debouncedQuery());
-      const url = `https://dummyjson.com/products/search?q=${query}`;
-      return url;
+            const query = encodeURIComponent(this.debouncedQuery());
+            const url = `https://dummyjson.com/products/search?q=${query}`;
+            return url;
+        }
+    );
+
+    isLoading = computed(() => this.#searchResource.isLoading());
+
+    error = computed(() => this.#searchResource.error());
+
+    data = this.#searchResource.value;
+
+    products = computed(() => {
+        return this.data()?.products.map((product) => product.title) || [];
+    });
+
+    updateQuery(value: string) {
+        this.query.set(value);
     }
-  );
-
-  isLoading = computed(() => this.#searchResource.isLoading());
-
-  error = computed(() => this.#searchResource.error());
-
-  data = this.#searchResource.value;
-
-  products = computed(() => {
-    return this.data()?.products.map((product) => product.title) || [];
-  });
-
-  updateQuery(value: string) {
-    this.query.set(value);
-  }
 }

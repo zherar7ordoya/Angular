@@ -1,0 +1,31 @@
+{
+  "name": "angular.dev",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^20.2.0-next",
+    "@angular/compiler": "^20.2.0-next",
+    "@angular/core": "^20.2.0-next",
+    "@angular/forms": "^20.2.0-next",
+    "@angular/platform-browser": "^20.2.0-next",
+    "@angular/router": "^20.2.0-next",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.2.0-next",
+    "@angular/cli": "^20.2.0-next",
+    "@angular/compiler-cli": "^20.2.0-next",
+    "@types/node": "^16.11.35",
+    "ts-node": "~10.9.0",
+    "typescript": "~5.8.0"
+  },
+  "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c"
+}

@@ -3,6 +3,7 @@ import { HousingLocation } from "../housing-location/housing-location";
 import { HousingLocationInfo } from "../housing-location";
 import { HousingService } from "../housing.service";
 
+
 @Component({
     selector: "app-home",
     imports: [HousingLocation],
